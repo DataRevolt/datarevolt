@@ -4,6 +4,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-image: url("united-vanguards-community-wallpaper.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #121830; /* very dark blue */
+        }
+
+        .btn {
+            width: 300px;
+            height: 60px;
+            border-radius: 30px;
+            background: rgba(9, 12, 24, 0.6);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            font-weight: 600;
+            color: #AAAAAA;
+            font-size: 18px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:disabled {
+                background-color: #6c757d;
+                cursor: not-allowed;
+            }
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+            .container input {
+                margin-right: 10px;
+            }
+
+            .container svg {
+                overflow: visible;
+                height: 1.5em;
+                width: 1.5em;
+                fill: none;
+                stroke: white;
+                stroke-width: 2;
+            }
+
+        .path {
+            stroke-dasharray: 1;
+            stroke-dashoffset: 0;
+            transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+        }
+
+        .container input:checked ~ svg .path {
+            stroke-dasharray: 20;
+            stroke-dashoffset: 0;
+        }
+
         body {
             height: 100%;
             background-image: url("united-vanguards-community-wallpaper.png");
