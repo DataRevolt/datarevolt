@@ -46,7 +46,8 @@
 
         input[type="text"],
         input[type="password"],
-        input[type="email"] {
+        input[type="email"],
+        input[type="submit"] {
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 10px;
@@ -57,12 +58,8 @@
         }
 
         input[type="submit"] {
-            width: 100%;
             background-color: #007bff;
             color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
 
@@ -99,6 +96,14 @@
         .container input:checked ~ svg .path {
             stroke-dasharray: 20;
             stroke-dashoffset: 0;
+        }
+
+        /* Media Queries für kleinere Bildschirme, z. B. Handys */
+        @media screen and (max-width: 600px) {
+            .btn {
+                width: calc(100% - 20px); /* Button nimmt die volle Breite des Bildschirms ein */
+                margin-bottom: 10px; /* Abstand zwischen Button und Formular */
+            }
         }
 
         body {
