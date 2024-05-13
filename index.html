@@ -1,39 +1,200 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-    .box {
-    width: 100px;
-    height: 100px;
-    background-color: #0A0A2A;
-    border: 2px solid #000;
-    border-radius: 10px; }
-    .box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    .box {
-    float: center; }
-    body { 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('united-vanguards-community-wallpaper.png');
-    background-size: cover;
-    background-position: center; }
-.container {
-    
-}
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <title>Register</title>
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("united-vanguards-community-wallpaper.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-color: #121830; /* very dark blue */
+            color: white;
+        }
+
+        body {
+            height: 100%;
+            background-image: url("united-vanguards-community-wallpaper.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #121830; /* very dark blue */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn {
+            border: none;
+            width: 330em;
+            height: 5em;
+            border-radius: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            background: rgba(9, 12, 24, 0.6); /* Transparent und etwas dunkler */
+            cursor: pointer;
+            transition: all 450ms ease-in-out;
+            position: fixed; /* Der Button bleibt an der gleichen Stelle, wenn die Seite gescrollt wird */
+            top: 0; /* Platzierung des Buttons ganz oben */
+            z-index: 9999; /* Stelle sicher, dass der Button über anderen Inhalten liegt */
+        }
+
+
+
+        .sparkle {
+            fill: #AAAAAA;
+            transition: all 800ms ease;
+        }
+
+        .text {
+            font-weight: 6< !DOCTYPE html> 00;
+            color: #AAAAAA;
+            font-size: medium;
+        }
+
+        .btn:hover {
+            background: linear-gradient(0deg, #140c1c, #140c1c); 
+            box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4), inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917FF;
+            transform: translateY(-2px);
+        }
+
+        }
+
+            .btn:hover .text {
+                color: white;
+            }
+
+            .btn:hover .sparkle {
+                fill: white;
+                transform: scale(1.2);
+            } 
+
+        .container {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+            .container input {
+                display: none;
+            }
+
+            .container svg {
+                overflow: visible;
+                margin-right: 10px; /* spacing between checkbox and text */
+            }
+
+        .path {
+            fill: none;
+            stroke: white;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+            stroke-dasharray: 241 9999999;
+            stroke-dashoffset: 0;
+        }
+
+        .container input:checked ~ svg .path {
+            stroke-dasharray: 70.5096664428711 9999999;
+            stroke-dashoffset: -262.2723388671875;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.5); /* transparent background of the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* form shadow */
+            max-width: 400px; /* max width of the form */
+            width: 100%; /* full width of the form */
+        }
+
+            form > div {
+                margin-bottom: 20px; /* spacing between sections */
+            }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: calc(100% - 20px); /* full width minus spacing */
+            padding: 10px; /* padding */
+            margin-bottom: 10px; /* spacing between input fields */
+            border: none; /* no border */
+            border-radius: 5px; /* rounded corners */
+            background-color: rgba(255, 255, 255, 0.1); /* transparent white */
+            color: white; /* text color */
+        }
+
+        input[type="submit"] {
+            background-color: #007bff; /* blue */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:disabled {
+                background-color: #6c757d; /* gray when disabled */
+                cursor: not-allowed;
+            }
+    </style>
 </head>
 <body>
-      <div class="box"></div> 
+
+    <button class="btn">
+        <span class="text">United Vanguards Community</span>
+    </button>
+
+    <form id="registerForm" action="/register" method="post">
+        <div>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+        </div>
+        <div>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="container" onclick="toggleCheckbox()">
+            <input type="checkbox" id="terms" name="terms">
+            <svg viewBox="0 0 64 64" height="2em" width="2em">
+                <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+            </svg>
+            <span>I agree to the terms and conditions</span>
+        </div>
+        <br>
+        <input type="submit" value="Register" disabled>
+    </form>
+
+    <script>
+        function toggleCheckbox() {
+            var checkbox = document.getElementById("terms");
+            var registerButton = document.querySelector('input[type="submit"]');
+
+            if (checkbox.checked) {
+                checkbox.checked = false;
+                registerButton.disabled = true;
+            } else {
+                checkbox.checked = true;
+                registerButton.disabled = false;
+            }
+        }
+    </script>
+
 </body>
 </html>
