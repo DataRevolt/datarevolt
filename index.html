@@ -121,22 +121,32 @@
             margin: 0;
         }
 
-        .btn {
-            border: none;
-            width: 33em;
-            height: 5em;
-            border-radius: 3em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            background: rgba(9, 12, 24, 0.6); /* Transparent und etwas dunkler */
-            cursor: pointer;
-            transition: all 450ms ease-in-out;
-            position: fixed;
-            top: 250px;
-            left: 840px place-items: center;
-        }
+       .btn {
+    border: none;
+    width: 33em;
+    height: 5em;
+    border-radius: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: rgba(9, 12, 24, 0.6); /* Transparent und etwas dunkler */
+    cursor: pointer;
+    transition: all 450ms ease-in-out;
+    position: fixed; /* Änderung hier */
+    top: 20px; /* Ändere diesen Wert entsprechend, um den Abstand zum oberen Rand anzupassen */
+    left: 50%; /* Dies zentriert den Button horizontal */
+    transform: translateX(-50%); /* Verschiebt den Button um die Hälfte seiner eigenen Breite nach links */
+    z-index: 9999; /* Stelle sicher, dass der Button über anderen Inhalten liegt */
+}
+
+/* Setze allgemeine Regeln zurück, die die Positionierung beeinflussen könnten */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 
         .sparkle {
