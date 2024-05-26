@@ -1,200 +1,311 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Login</title>
     <style>
-
         body {
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: url("uvw.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            background-color: #121830; /* very dark blue */
-            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            padding: 20px;
         }
 
         body {
-            height: 100%;
-            background-image: url("uvw.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            background-color: #121830; /* very dark blue */
-            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
         }
 
-        .btn {
-            border: none;
-            width: 330em;
-            height: 5em;
-            border-radius: 3em;
+        .section {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .top-section {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .bottom-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bottom-left, .bottom-right {
+            width: 48%;
+            background-color: #e9ecef;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .bottom-section {
+                flex-direction: column;
+            }
+
+            .bottom-left, .bottom-right {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        .background {
+            width: 100vw;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
-            background: rgba(9, 12, 24, 0.6); /* Transparent und etwas dunkler */
-            cursor: pointer;
-            transition: all 450ms ease-in-out;
-            position: fixed; /* Der Button bleibt an der gleichen Stelle, wenn die Seite gescrollt wird */
-            top: 0; /* Platzierung des Buttons ganz oben */
-            z-index: 9999; /* Stelle sicher, dass der Button über anderen Inhalten liegt */
+            background: #121212;
+            background: linear-gradient( 135deg, #1a0b00 25%, #000000 25%, #000000 50%, #1a0b00 50%, #1a0b00 75%, #000000 75%, #000000 100% );
+            background-size: 40px 40px;
+            animation: move 4s linear infinite;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
         }
 
-
-
-        .sparkle {
-            fill: #AAAAAA;
-            transition: all 800ms ease;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .text {
-            font-weight: 6< !DOCTYPE html> 00;
-            color: #AAAAAA;
-            font-size: medium;
-        }
-
-        .btn:hover {
-            background: linear-gradient(0deg, #140c1c, #140c1c); 
-            box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4), inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917FF;
-            transform: translateY(-2px);
-        }
-
-        }
-
-            .btn:hover .text {
-                color: white;
+        @keyframes move {
+            0% {
+                background-position: 0 0;
             }
 
-            .btn:hover .sparkle {
-                fill: white;
-                transform: scale(1.2);
-            } 
-
-        .container {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
+            100% {
+                background-position: 80px 80px;
+            }
         }
 
-            .container input {
-                display: none;
-            }
-
-            .container svg {
-                overflow: visible;
-                margin-right: 10px; /* spacing between checkbox and text */
-            }
-
-        .path {
-            fill: none;
-            stroke: white;
-            stroke-width: 6;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
-            stroke-dasharray: 241 9999999;
-            stroke-dashoffset: 0;
+        .login-container {
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: -2px -2px 2px #df5d1c, 2px -2px 2px #df5d1c, -2px 2px 2px #df5d1c, 2px 2px 2px #df5d1c;
+            padding: 25px 35px;
+            border-radius: 10px;
+            text-align: left;
+            width: 300px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        .container input:checked ~ svg .path {
-            stroke-dasharray: 70.5096664428711 9999999;
-            stroke-dashoffset: -262.2723388671875;
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #df5d1c;
         }
 
         form {
-            background-color: rgba(0, 0, 0, 0.5); /* transparent background of the form */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* form shadow */
-            max-width: 400px; /* max width of the form */
-            width: 100%; /* full width of the form */
+            display: flex;
+            flex-direction: column;
         }
 
-            form > div {
-                margin-bottom: 20px; /* spacing between sections */
+        label {
+            margin: 10px 0 5px;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #df5d1c;
+            border-radius: 5px;
+            background: #371606;
+            color: white;
+        }
+
+            input::placeholder {
+                color: #df5d1c;
             }
 
-        input[type="text"],
-        input[type="password"],
-        input[type="email"] {
-            width: calc(100% - 20px); /* full width minus spacing */
-            padding: 10px; /* padding */
-            margin-bottom: 10px; /* spacing between input fields */
-            border: none; /* no border */
-            border-radius: 5px; /* rounded corners */
-            background-color: rgba(255, 255, 255, 0.1); /* transparent white */
-            color: white; /* text color */
-        }
-
-        input[type="submit"] {
-            background-color: #007bff; /* blue */
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        button {
+            padding: 10px;
+            border: 2px solid #df5d1c;
             border-radius: 5px;
+            background-color: black;
+            color: #df5d1c;
+            font-size: 16px;
             cursor: pointer;
         }
 
-            input[type="submit"]:disabled {
-                background-color: #6c757d; /* gray when disabled */
-                cursor: not-allowed;
+            button:hover {
+                background-color: #271005
             }
+
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #df5d1c;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .questions, .additional-links {
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 0.72em;
+            white-space: nowrap;
+            overflow: visible;
+        }
+
+        .vertical-line {
+            border-left: 1px solid white;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .questions p, .additional-links p {
+            margin: 0;
+            padding: 10px 0;
+            color: #df5d1c;
+        }
+
+        .additional-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .additional-links a:hover {
+                text-decoration: underline;
+            }
+
+        .terms-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form__group {
+            position: relative;
+            padding: 20px 0 0;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .form__field {
+            font-family: inherit;
+            width: 100%;
+            border: none;
+            border-bottom: 3px solid #df5d1c;
+            outline: 0;
+            font-size: 17px;
+            color: #df5d1c;
+            padding: 10px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+            .form__field::placeholder {
+                color: transparent;
+            }
+
+            .form__field:placeholder-shown ~ .form__label {
+                font-size: 17px;
+                cursor: text;
+                top: 20px;
+            }
+
+        .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            color: #df5d1c;
+            pointer-events: none;
+        }
+
+        .form__field:focus {
+            padding-bottom: 6px;
+            font-weight: 700;
+            border-width: 3px;
+            border-image: linear-gradient(to right, #df5d1c, #df5d1c);
+            border-image-slice: 1;
+        }
+
+            .form__field:focus ~ .form__label {
+                position: absolute
+            }
+
+        .header {
+            background-color: #371606;
+            padding: 25px;
+        }
+
+        .navbar {
+            background-color: hsl(24, 100%, 2%);
+            height: 50px;
+        }
+
+        .footer {
+            display: block;
+            clear: both;
+            background-color: #e9ecef;
+            padding: 25px;
+        }
     </style>
 </head>
 <body>
-
-    <button class="btn">
-        <span class="text">United Vanguards Community</span>
-    </button>
-
-    <form id="registerForm" action="/register" method="post">
-        <div>
-            <input type="text" id="username" name="username" placeholder="Username" required>
+    <header class="header">
+        <h2>Smart AI</h2>
+    </header>
+    <nav class="navbar">
+        <h2>
+             
+        </h2>
+    </nav>
+    <main>
+        <div class="content" id="top">
+            <div class="background">
+                <div class="login-container">
+                    <h1>Login</h1>
+                    <form>
+                        <div class="form__group field">
+                            <input type="input" class="form__field" placeholder="Email" required="">
+                            <label for="Email" class="form__label">Email</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="password" class="form__field" placeholder="Password" required="">
+                            <label for="Password" class="form__label">Password</label>
+                        </div>
+                        <label for="leerzeichen"> </label>
+                        <button type="submit">Sign In</button>
+                        <label for="leerzeichen"> </label>
+                    </form>
+                    <hr>
+                    <div class="container">
+                        <div class="questions">
+                            <p>Don't Have an Account Yet?</p>
+                            <p>Forgotten Your Password?</p>
+                            <p>Require Help or Solution?</p>
+                        </div>
+                        <div class="vertical-line"></div>
+                        <div class="additional-links">
+                            <p><a href="#">Register Now</a></p>
+                            <p><a href="#">Reset Password</a></p>
+                            <p><a href="#">Contact Support</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-        </div>
-        <div>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-        </div>
-        <div class="container" onclick="toggleCheckbox()">
-            <input type="checkbox" id="terms" name="terms">
-            <svg viewBox="0 0 64 64" height="2em" width="2em">
-                <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
-            </svg>
-            <span>I agree to the terms and conditions</span>
-        </div>
-        <br>
-        <input type="submit" value="Register" disabled>
-    </form>
-
-    <script>
-        function toggleCheckbox() {
-            var checkbox = document.getElementById("terms");
-            var registerButton = document.querySelector('input[type="submit"]');
-
-            if (checkbox.checked) {
-                checkbox.checked = false;
-                registerButton.disabled = true;
-            } else {
-                checkbox.checked = true;
-                registerButton.disabled = false;
-            }
-        }
-    </script>
-
+    </main>
+    <footer class="footer">
+        <h2>Informationen</h2>
+    </footer>
 </body>
 </html>
