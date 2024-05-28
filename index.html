@@ -4,75 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartAI</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
+        
+        html, body {
             margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
             font-family: Arial, sans-serif;
         }
 
-        .content {
-            padding: 20px;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .section {
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .top-section {
-            background-color: #f8f9fa;
+        .header {
+            background-color: hsl(224 36% 8%);
             text-align: center;
-        }
-
-        .bottom-section {
+            padding: 25px;
+            color: white;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
         }
 
-        .bottom-left, .bottom-right {
-            width: 48%;
-            background-color: #e9ecef;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        @media (max-width: 768px) {
-            .bottom-section {
-                flex-direction: column;
+            .header img {
+                margin-right: 15px;
+                height: 100px;
             }
 
-            .bottom-left, .bottom-right {
-                width: 100%;
-                margin-bottom: 20px;
+            .header h1 {
+                font-size: 40px;
+                margin-right: 40px;
+                margin-bottom: 20px; 
             }
+
+
+        .nav {
+            background-color: hsl(228 38% 5%);
+            text-align: center;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
         }
 
-        .background {
+            .nav a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+
+                .nav a:hover {
+                    background-color: hsl(225 39% 15%);
+                }
+
+        .content {
             width: 100vw;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #121212;
-            background: linear-gradient( 135deg, #1a0b00 25%, #000000 25%, #000000 50%, #1a0b00 50%, #1a0b00 75%, #000000 75%, #000000 100% );
-            background-size: 40px 40px;
-            animation: move 4s linear infinite;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
+            position: relative;
+            z-index: 0;
+            background-color: black;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: hsl(225 39% 5%);
+            padding: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
+
+            .footer .nav {
+                display: flex;
+                justify-content: space-evenly; 
+                align-items: center;
+            }
+
+                .footer .nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 20px;
+                }
+
+                    .footer .nav a:hover {
+                        background-color: hsl(225 39% 15%);
+                    }
+
+        .left-section1 {
+            text-align: left;
+        }
+
+        .right-section1 {
+            text-align: left;
+        }
+
+        .left-section {
+            text-align: left;
+        }
+
+        .right-section {
+            text-align: left;
+        }
+
+        .divider {
+            width: 2px;
+            height: auto;
+            background-color: hsl(235 19% 49%);
+            margin: 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(225 38% 8%);
+            padding: 35px;
+            color: hsl(235 19% 49%);
+        }
+
+            .footer-bottom .left-section, .footer-bottom .right-section {
+               
+                text-align: left;
+            }
 
         @keyframes move {
             0% {
@@ -80,230 +140,42 @@
             }
 
             100% {
-                background-position: 80px 80px;
+                background-position: 40px 40px;
             }
-        }
-
-        .login-container {
-            background: rgba(0, 0, 0, 0.7);
-            box-shadow: -2px -2px 2px #df5d1c, 2px -2px 2px #df5d1c, -2px 2px 2px #df5d1c, 2px 2px 2px #df5d1c;
-            padding: 25px 35px;
-            border-radius: 10px;
-            text-align: left;
-            width: 300px;
-            height: 500px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #df5d1c;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin: 10px 0 5px;
-            color: white;
-        }
-
-        input {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #df5d1c;
-            border-radius: 5px;
-            background: #371606;
-            color: white;
-        }
-
-            input::placeholder {
-                color: #df5d1c;
-            }
-
-        button {
-            padding: 10px;
-            border: 2px solid #df5d1c;
-            border-radius: 5px;
-            background-color: black;
-            color: #df5d1c;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-            button:hover {
-                background-color: #271005
-            }
-
-        hr {
-            margin: 20px 0;
-            border: 0;
-            border-top: 1px solid #df5d1c;
-        }
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px;
-        }
-
-        .questions, .additional-links {
-            padding: 10px;
-            letter-spacing: 1px;
-            font-size: 0.72em;
-            white-space: nowrap;
-            overflow: visible;
-        }
-
-        .vertical-line {
-            border-left: 1px solid white;
-            height: 100%;
-            margin: 0 20px;
-        }
-
-        .questions p, .additional-links p {
-            margin: 0;
-            padding: 10px 0;
-            color: #df5d1c;
-        }
-
-        .additional-links a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-            .additional-links a:hover {
-                text-decoration: underline;
-            }
-
-        .terms-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .form__group {
-            position: relative;
-            padding: 20px 0 0;
-            width: 100%;
-            max-width: 300px;
-        }
-
-        .form__field {
-            font-family: inherit;
-            width: 100%;
-            border: none;
-            border-bottom: 3px solid #df5d1c;
-            outline: 0;
-            font-size: 17px;
-            color: #df5d1c;
-            padding: 10px 0;
-            background: transparent;
-            transition: border-color 0.2s;
-        }
-
-            .form__field::placeholder {
-                color: transparent;
-            }
-
-            .form__field:placeholder-shown ~ .form__label {
-                font-size: 17px;
-                cursor: text;
-                top: 20px;
-            }
-
-        .form__label {
-            position: absolute;
-            top: 0;
-            display: block;
-            transition: 0.2s;
-            font-size: 17px;
-            color: #df5d1c;
-            pointer-events: none;
-        }
-
-        .form__field:focus {
-            padding-bottom: 6px;
-            font-weight: 700;
-            border-width: 3px;
-            border-image: linear-gradient(to right, #df5d1c, #df5d1c);
-            border-image-slice: 1;
-        }
-
-            .form__field:focus ~ .form__label {
-                position: absolute
-            }
-
-        .header {
-            background-color: #371606;
-            padding: 25px;
-        }
-
-        .navbar {
-            background-color: hsl(24, 100%, 2%);
-            height: 50px;
-        }
-
-        .footer {
-            display: block;
-            clear: both;
-            background-color: #e9ecef;
-            padding: 25px;
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <p>Titel</p>
+        <img src="database/smartai.png" alt="Logo">
+        <h1>SmartAI</h1>
     </header>
-    <nav class="navbar">
-
+    <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Store</a>
+        <a href="#">Login</a>
+        <a href="#">Menu</a>
     </nav>
-    <main>
-        <div class="content" id="top">
-            <div class="background">
-                <div class="login-container">
-                    <h1>Login</h1>
-                    <form>
-                        <div class="form__group field">
-                            <input type="input" class="form__field" placeholder="Email" required="">
-                            <label for="Email" class="form__label">Email</label>
-                        </div>
-                        <div class="form__group field">
-                            <input type="password" class="form__field" placeholder="Password" required="">
-                            <label for="Password" class="form__label">Password</label>
-                        </div>
-                        <label for="leerzeichen"> </label>
-                        <button type="submit">Sign In</button>
-                        <label for="leerzeichen"> </label>
-                    </form>
-                    <hr>
-                    <div class="container">
-                        <div class="questions">
-                            <p>Don't Have an Account Yet?</p>
-                            <p>Forgotten Your Password?</p>
-                            <p>Require Help or Solution?</p>
-                        </div>
-                        <div class="vertical-line"></div>
-                        <div class="additional-links">
-                            <p><a href="#">Register Now</a></p>
-                            <p><a href="#">Reset Password</a></p>
-                            <p><a href="#">Contact Support</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <div class="content">
+
+    </div>
     <footer class="footer">
-        <h2>Informationen</h2>
+        <div class="left-section">
+            <h2>MAIN MENU</h2>
+            <p>> Home</p>
+            <p>> Store</p>
+            <p>> Menu</p>
+        </div>
+        <div class="right-section">
+            <h2>INFORMATION</h2>
+            <p>> Terms and Conditions</p>
+            <p>> Contact Support</p>
+            <p>> About Us</p>
+        </div>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="left-section1">SmartAI, © 2024 - 2074</div>
+        <div class="right-section1">Contact Us</div>
     </footer>
 </body>
 </html>
