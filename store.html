@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="smartai.png">
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: hsl(224 36% 8%);
+            text-align: center;
+            padding: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .header img {
+                margin-right: 15px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+                margin-right: 40px;
+                margin-bottom: 20px;
+            }
+
+
+        .nav {
+            background-color: hsl(228, 38%, 5%);
+            color: white;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+        }
+
+            .nav a, .footer a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+
+                .nav a:hover, .footer a:hover {
+                    background-color: hsl(225, 39%, 15%);
+                }
+
+        .content {
+            width: 100vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            background-color: black;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(225, 38%, 8%);
+            padding: 35px;
+            color: hsl(235, 19%, 49%);
+        }
+
+            .footer .nav {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+                .footer .nav a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 20px;
+                }
+
+                    .footer .nav a:hover {
+                        background-color: hsl(225 39% 15%);
+                    }
+
+        section {
+            text-align: left;
+        }
+
+        .divider {
+            width: 2px;
+            height: auto;
+            background-color: hsl(235 19% 49%);
+            margin: 0 20px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(225 38% 8%);
+            padding: 35px;
+            color: hsl(235 19% 49%);
+        }
+
+            .footer-bottom, .footer-bottom .section {
+                text-align: left;
+            }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 40px 40px;
+            }
+        }
+
+        .sales-offer {
+            width: 300px;
+            height: 500px;
+            background-color: hsl(224 36% 8%);
+            border-radius: 20px;
+            margin: 50px;
+        }
+
+            .sales-offer h1 {
+                text-align: center;
+                color: white;
+                padding: 15px;
+                display: flex;
+                color: #fff;
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-bottom: 15px;
+                margin-left: 20px;
+                font-family: Arial, sans-serif;
+            }
+
+            .sales-offer h2 {
+                text-align: center;
+                color: white;
+                padding: 15px;
+                display: flex;
+                color: #fff;
+                margin-top: -40px;
+                margin-bottom: 15px;
+                margin-left: 23px;
+                font-size: 12px;
+                font-family: Arial, sans-serif;
+            }
+
+        .buy {
+            text-align: center;
+            height: 20px;
+            width: 200px;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            margin-top: -20px;
+            margin-bottom: 15px;
+            margin-left: 30px;
+            border-radius: 7px;
+        }
+
+        .sales-offer h3 {
+            text-align: center;
+            color: white;
+            padding: 5px;
+            display: flex;
+            color: hsl(224, 36%, 8%);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: -20px;
+            font-size: 26px;
+            font-family: Arial, sans-serif;
+        }
+
+        .sales-offer h4 {
+            text-align: center;
+            color: white;
+            padding: 0px;
+            display: flex;
+            color: hsl(224, 36%, 8%);
+            margin-top: 5px;
+            margin-bottom: 15px;
+            margin-left: 0px;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+        }
+
+        .sales-offer h5 {
+            text-align: center;
+            color: white;
+            padding: 0px;
+            display: flex;
+            color: white;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            margin-left: 30px;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+        }
+
+        div h5 {
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
+            div h5 svg {
+                width: 16px;
+                height: 16px;
+                margin-right: 5px;
+                color: #fff;
+                font-size: 14px;
+            }
+
+        .divider-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .divider {
+            width: 250px;
+            height: 2px;
+            background-color: #fff;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .buy-button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 60px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            margin-left: 30px;
+        }
+
+            .buy-button:hover {
+                background-color: white;
+                color: black;
+            }
+
+        .content {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                height: 1800px;
+            }
+
+            .sales-offer {
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="smartai.png" alt="Logo">
+        <h1>SmartAI</h1>
+    </header>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="login.html">Login</a>
+        <a href="menu.html">Menu</a>
+    </nav>
+    <div class="content">
+        <div class="sales-offer left-section">
+            <h1>Gamer AI</h1>
+            <h2>The Universal Hacker Script</h2>
+            <div class="buy">
+                <h3>€ 50.00</h3>
+                <h4>/ lifetime</h4>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Undetectable Hacker Tool</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Aimbot, Wallhack & Mod Menu</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Minimal graphics performance required</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Compatible with 27 games</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> </span> 2-week refund period</h5>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> One-Time purchase per account</span>
+                    </svg>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> Product with Terms and Conditions</span>
+                    </svg>
+                </h5>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="sales-offer">
+            <h1>Business AI</h1>
+            <h2>Your Professional AI Assistant</h2>
+            <div class="buy">
+                <h3>€ 100.00</h3>
+                <h4>/ lifetime</h4>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Unbeatable Creativity</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Precise Trade Predictions</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Outperform Your Competition</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Takes over employee tasks</span></h5>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> One-Time purchase per account</span>
+                    </svg>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> Product with Terms and Conditions</span>
+                    </svg>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> No Refund</span>
+                    </svg>
+                </h5>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+        <div class="sales-offer right-section">
+            <h1>Quantum AI</h1>
+            <h2>World's most powerful AI</h2>
+            <div class="buy">
+                <h3>€ 200.00</h3>
+                <h4>/ month</h4>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Unmatched AI Power</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Offline Functionality</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> Long-Term Memory</span></h5>
+            </div>
+            <div>
+                <h5><svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF"><path d="M7 12.5L10 15.5L17 8.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg><span> 24 / 7 Professional Support</span></h5>
+            </div>
+            <div class="divider"></div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> One subscription per account</span>
+                    </svg>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> Subscription with Terms and Conditions</span>
+                    </svg>
+                </h5>
+            </div>
+            <div>
+                <h5>
+                    <svg width="16px" height="16px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" color="#FFFFFF">
+                        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" stroke-width="1.5" />
+                        <path d="M8 8L16 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 16L16 8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <span> Currently in Beta-Version</span>
+                    </svg>
+                </h5>
+            </div>
+            <button class="buy-button">Buy Now</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <nav class="nav" style="width: 100%; justify-content: space-evenly;">
+            <a href="aboutus.html">About Us</a>
+            <a href="terms.html">Terms and Conditions</a>
+            <a href="support.html">Contact Support</a>
+        </nav>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="left-section1">SmartAI, © 2024 - 2074</div>
+        <div class="right-section1">Contact Us</div>
+    </footer>
+</body>
+</html>
