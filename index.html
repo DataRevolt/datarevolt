@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataRevolt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="d.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: hsl(224, 36%, 8%);
+            text-align: center;
+            padding: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .header img {
+                margin-right: 15px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+                margin-right: 40px;
+                margin-bottom: 20px;
+            }
+
+        .nav, .footer {
+            background-color: hsl(228, 38%, 5%);
+            color: white;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+        }
+
+            .nav a, .footer a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+
+                .nav a:hover, .footer a:hover {
+                    background-color: hsl(225, 39%, 15%);
+                }
+
+        .content {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            background-color: black;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(225, 38%, 8%);
+            padding: 35px;
+            color: hsl(235, 19%, 49%);
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 40px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="d.png" alt="Logo">
+        <h1>DataRevolt</h1>
+    </header>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="login.html">Login</a>
+        <a href="menu.html">Menu</a>
+    </nav>
+    <div class="content"></div>
+    <footer class="footer">
+        <nav class="nav" style="width: 100%; justify-content: space-evenly;">
+            <a href="aboutus.html">About Us</a>
+            <a href="terms.html">Terms and Conditions</a>
+            <a href="support.html">Contact Support</a>
+        </nav>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="left-section">DataRevolt, © 2024</div>
+        <div class="right-section">Contact Us</div>
+    </footer>
+</body>
+</html>
