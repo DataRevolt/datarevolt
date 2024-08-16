@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataRevolt</title>
+    <link rel="icon" href="d.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: hsl(224, 36%, 8%);
+            text-align: center;
+            padding: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header img {
+            margin-right: 15px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            margin-right: 40px;
+            margin-bottom: 20px;
+        }
+
+        .nav, .footer {
+            background-color: hsl(228, 38%, 5%);
+            color: white;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+        }
+
+        .nav a, .footer a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        .nav a:hover, .footer a:hover {
+            background-color: hsl(225, 39%, 15%);
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            position: relative;
+            height: 100vh;
+            padding-top: 10%;
+            background-color: black;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+        .product-image {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        .image-title {
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(225, 38%, 8%);
+            padding: 35px;
+            color: hsl(235, 19%, 49%);
+        }
+
+        .footer-bottom a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .image-button-1, .image-button-2 {
+            padding: 12px 24px;
+            font-size: 14px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .image-button-1 {
+            background-color: #007fd3;
+        }
+
+        .image-button-1:hover {
+            background-color: #005f9e;
+            transform: scale(1.05);
+        }
+
+        .image-button-2 {
+            background-color: #3700ff;
+        }
+
+        .image-button-2:hover {
+            background-color: #1e00a3;
+            transform: scale(1.05);
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .button-group a {
+            display: inline-block;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="d.png" alt="Logo">
+        <h1>DataRevolt</h1>
+    </header>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="help.html">Help</a>
+        <a href="menu.html">Menu</a>
+    </nav>
+    <div class="content">
+        <div class="image-container">
+            <h3 class="image-title">Revolt Lite (Rainbow Six Siege)</h3>
+            <img class="product-image" height="150" width="275" src="r.png" alt="Revolt Lite">
+            <div class="button-group">
+                <a href="product-1.0.html" class="image-button-1">1 Day: 3.99€</a>
+                <a href="product-1.1.html" class="image-button-1">1 Week: 7.99€</a>
+                <a href="product-1.2.html" class="image-button-1">1 Month: 14.99€</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <h3 class="image-title">Revolt Full (Rainbow Six Siege)</h3>
+            <img class="product-image" height="150" width="275" src="r.png" alt="Revolt Full">
+            <div class="button-group">
+                <a href="product-2.0.html" class="image-button-2">1 Day: 7.99€</a>
+                <a href="product-2.1.html" class="image-button-2">1 Week: 15.99€</a>
+                <a href="product-2.2.html" class="image-button-2">1 Month: 29.99€</a>
+            </div>
+        </div>     
+    </div>
+    <footer class="footer">
+        <nav class="nav" style="width: 100%; justify-content: space-evenly;">
+            <a href="aboutus.html">About Us</a>
+            <a href="terms.html">Terms and Conditions</a>
+            <a href="support.html">Contact Support</a>
+        </nav>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="left-section">DataRevolt, © 2024</div>
+        <a class="right-section" href="contactus.html">Contact Us</a>
+    </footer>
+</body>
+</html>
