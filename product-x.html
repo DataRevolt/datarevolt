@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="d.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataRevolt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="d.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: hsl(224, 36%, 8%);
+            text-align: center;
+            padding: 25px;
+            color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .header img {
+                margin-right: 15px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .header h1 {
+                font-size: 40px;
+                margin-right: 40px;
+                margin-bottom: 20px;
+            }
+
+        .nav, .footer {
+            background-color: hsl(228, 38%, 5%);
+            color: white;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+        }
+
+            .nav a, .footer a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+
+                .nav a:hover, .footer a:hover {
+                    background-color: hsl(225, 39%, 15%);
+                }
+
+        .content {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            background-color: black;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsl(225, 38%, 8%);
+            padding: 35px;
+            color: hsl(235, 19%, 49%);
+        }
+
+        .footer-bottom a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 40px 40px;
+            }
+        }
+
+        .product-box {
+            background-color: hsl(224, 36%, 8%);
+            width: 600px;
+            height: auto;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .product-video {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .product-video iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: 0;
+        }
+
+        .buy-button {
+            display: block;
+            padding: 15px;
+            background-color: #3700ff;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .buy-button:hover {
+            background-color: #2a00c4;
+        }
+
+        .product-info {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="d.png" alt="Logo">
+        <h1>DataRevolt</h1>
+    </header>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="store.html">Store</a>
+        <a href="help.html">Help</a>
+        <a href="menu.html">Menu</a>
+    </nav>
+    <div class="content">
+        <div class="product-box">
+            <div class="product-title">Revolt Lite: 1 Day (Rainbow Six Siege)</div>
+            
+            <div class="product-video">
+            <iframe src="https://www.youtube.com/watch?v=QD8DhAAeav8" allowfullscreen></iframe>
+            </div>
+            
+            <a href="#" class="buy-button">Buy now</a>
+            
+            <div class="product-info">
+                <p>ESP [ | Enemies | Teammates | Observation | Traps | More | ]</p>
+                <p>AIM [ | No Recoil | No Spread | Auto Reload | Triggerbot | ]</p>
+                <p>MISC [ | HWID Spoofer | Language: English / German | ]</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <nav class="nav" style="width: 100%; justify-content: space-evenly;">
+            <a href="aboutus.html">About Us</a>
+            <a href="terms.html">Terms and Conditions</a>
+            <a href="support.html">Contact Support</a>
+        </nav>
+    </footer>
+    <footer class="footer-bottom">
+        <div class="left-section">DataRevolt, © 2024</div>
+        <a class="right-section" href="contactus.html">Contact Us</a>
+    </footer>
+</body>
+</html>
