@@ -29,17 +29,17 @@
             justify-content: center;
         }
 
-            .header img {
-                margin-right: 15px;
-                width: 100px;
-                height: 100px;
-            }
+        .header img {
+            margin-right: 15px;
+            width: 100px;
+            height: 100px;
+        }
 
-            .header h1 {
-                font-size: 40px;
-                margin-right: 40px;
-                margin-bottom: 20px;
-            }
+        .header h1 {
+            font-size: 40px;
+            margin-right: 40px;
+            margin-bottom: 20px;
+        }
 
         .nav, .footer {
             background-color: hsl(228, 38%, 5%);
@@ -51,15 +51,15 @@
             height: 60px;
         }
 
-            .nav a, .footer a {
-                color: white;
-                text-decoration: none;
-                padding: 10px 20px;
-            }
+        .nav a, .footer a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
 
-                .nav a:hover, .footer a:hover {
-                    background-color: hsl(225, 39%, 15%);
-                }
+        .nav a:hover, .footer a:hover {
+            background-color: hsl(225, 39%, 15%);
+        }
 
         .content {
             width: 100vw;
@@ -70,6 +70,7 @@
             position: relative;
             z-index: 0;
             background-color: black;
+            background-image: url('b.png');
         }
 
         .footer-bottom {
@@ -97,29 +98,30 @@
         }
 
         .product-box {
-            background-color: hsl(224, 36%, 8%);
-            width: 600px;
-            height: auto;
-            border-radius: 4px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
+    background-color: hsl(224, 36%, 8%);
+    width: 600px;
+    height: auto;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border: 2px solid #3700ff;
+}
 
         .product-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-size: 36px;
+            font-family: DataRevolt;
         }
 
         .product-video {
             width: 100%;
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             position: relative;
             margin-bottom: 20px;
+            border: 2px solid #3700ff;
         }
 
         .product-video iframe {
@@ -131,9 +133,19 @@
             border: 0;
         }
 
+        .buy-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .buy-button, .id-generator {
+            width: 48%;
+        }
+
         .buy-button {
-            display: block;
-            padding: 15px;
+            padding: 12px;
             background-color: #3700ff;
             color: white;
             text-align: center;
@@ -142,11 +154,22 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            margin-bottom: 20px;
+            margin-right: 10px;
         }
 
         .buy-button:hover {
             background-color: #2a00c4;
+            transform: scale(1.02);
+        }
+
+        .id-generator {
+            padding: 12px;
+            font-size: 16px;
+            text-align: center;
+            border: 2px solid #3700ff;
+            border-radius: 5px;
+            color: rgb(255, 255, 255);
+            margin: 0;
         }
 
         .product-info {
@@ -155,8 +178,13 @@
             color: #ccc;
         }
 
+        .cut {
+            color: #ccc;
+        }
+
     </style>
 </head>
+
 <body>
     <header class="header">
         <img src="d.png" alt="Logo">
@@ -170,18 +198,22 @@
     </nav>
     <div class="content">
         <div class="product-box">
-            <div class="product-title">Revolt Lite: 1 Day (Rainbow Six Siege)</div>
+            <div class="product-title">Revolt Lite 1 Day</div>
+            <p class="cut">|------------------------------------| Product 1.0 |------------------------------------|</p>
             
             <div class="product-video">
-            <iframe src="https://www.youtube.com/watch?v=QD8DhAAeav8" allowfullscreen></iframe>
+                <iframe src="Revolt Lite 1 Day (Rainbow Six Siege).mp4" allowfullscreen></iframe>
             </div>
-            
-            <a href="#" class="buy-button">Buy now</a>
-            
+            <div class="buy-container">
+                <a href="#" class="buy-button">Buy for 3.99 € with PayPal</a>
+                <p class="id-generator" id="auto-code"></p>
+            </div>
+
             <div class="product-info">
-                <p>ESP [ | Enemies | Teammates | Observation | Traps | More | ]</p>
-                <p>AIM [ | No Recoil | No Spread | Auto Reload | Triggerbot | ]</p>
-                <p>MISC [ | HWID Spoofer | Language: English / German | ]</p>
+                <p class="cut">|------------------------------------| Description |------------------------------------|</p>
+                <p>ESP | Enemies | Teammates | Observation | Traps | More |</p>
+                <p>AIM | No Recoil | No Spread | Instant ADS | Triggerbot |</p>
+                <p>MISC | No Refund | Language: English / German |</p>
             </div>
         </div>
     </div>
@@ -196,5 +228,17 @@
         <div class="left-section">DataRevolt, © 2024</div>
         <a class="right-section" href="contactus.html">Contact Us</a>
     </footer>
+    <script>
+    function generateCode() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let code = 'Transaction ID = ';
+        for (let i = 0; i < 8; i++) {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            code += characters[randomIndex];
+        }
+        return code;
+    }
+    document.getElementById('auto-code').innerText = generateCode();
+    </script>
 </body>
 </html>
